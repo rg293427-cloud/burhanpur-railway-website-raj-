@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burhanpur Railway Station | Premium Portal</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay">
+    <h1>Welcome to Burhanpur Railway Station</h1>
+    <p class="tagline">🚆 “Safar sirf ek yatra nahi, yaadon ka silsila hota hai”</p>
+    <button onclick="playAnnouncement()">🔊 Station Announcement</button>
+  </div>
+</section>
+
+<!-- SLIDER -->
+<section class="slider">
+  <img src="images/station1.jpg" class="slide">
+  <img src="images/station2.jpg" class="slide">
+  <img src="images/station3.jpg" class="slide">
+</section>
+
+<!-- HISTORY -->
+<section class="section">
+<h2>History of Burhanpur Railway Station</h2>
+<p>
+Burhanpur Madhya Pradesh ka ek prachin aur aitihasik sheher hai.
+Mughal kaal me ye sheher trade aur military movement ka important center tha.
+Burhanpur Railway Station ne British era ke dauran is sheher ko
+desh ke anya hisson se jodne me bahut badi bhumika nibhayi.
+Tapti nadi ke kinare sthit ye station aaj bhi
+North-South railway route ka important junction mana jata hai.
+</p>
+<p>
+Yeh station sirf yatra ka madhyam nahi,
+balki sheher ke vikas, rozgar aur tourism ka pramukh kendra raha hai.
+Aaj Burhanpur Railway Station modern facilities ke saath
+heritage aur technology ka perfect combination hai.
+</p>
+</section>
+
+<!-- WEATHER -->
+<section class="section weather">
+<h2>Live Weather - Burhanpur</h2>
+<p id="weather">Loading weather...</p>
+</section>
+
+<!-- LIVE TRAIN STATUS -->
+<section class="section">
+<h2>Live Train Status</h2>
+<select id="trainSelect">
+  <option value="">Select Train</option>
+  <option value="Punjab Mail">Punjab Mail</option>
+  <option value="Tapti Ganga">Tapti Ganga Express</option>
+  <option value="Narmada">Narmada Express</option>
+</select>
+<p id="trainResult"></p>
+
+<button onclick="platformAnnouncement()">
+📢 Platform Announcement
+</button>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+<h2>Railway Station Gallery</h2>
+<div class="gallery">
+  <img src="images/station1.jpg">
+  <img src="images/station2.jpg">
+  <img src="images/station3.jpg">
+  <img src="images/station1.jpg">
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="section team">
+<h2>Project Team</h2>
+<div class="team-box">
+  <div class="member">
+    <img src="images/raj.jpeg">
+    <h3>Raj Patil</h3>
+    <p>Frontend Developer</p>
+  </div>
+  <div class="member">
+    <img src="images/rahul.jpeg">
+    <h3>Rahul Chimankar</h3>
+    <p>UI / UX Designer</p>
+  </div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking">
+<h2>Ticket Booking</h2>
+<form id="ticketForm">
+  <input id="name" placeholder="Passenger Name" required>
+  <input id="from" placeholder="From Station" required>
+  <input id="to" placeholder="To Station" required>
+  <input type="date" required>
+  <button type="submit">Book Ticket & Download PDF</button>
+</form>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+<h2>Contact Us</h2>
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button onclick="alert('Message Sent Successfully')">Send</button>
+</section>
+
+<!-- MAP -->
+<section class="section">
+<h2>Station Location</h2>
+<iframe 
+src="https://www.google.com/maps?q=Burhanpur+Railway+Station&output=embed"
+width="100%" height="350" style="border-radius:10px;border:0;">
+</iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Burhanpur Railway Station | College Project</p>
+<p>Designed by Raj & Rahul</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

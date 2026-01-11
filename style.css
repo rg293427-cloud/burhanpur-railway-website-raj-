@@ -1,0 +1,108 @@
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:#f4f6f9;
+color:#222;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:url("images/station1.jpg") center/cover;
+}
+.overlay{
+background:rgba(0,0,0,0.65);
+height:100%;
+color:white;
+text-align:center;
+padding-top:220px;
+}
+.overlay h1{font-size:50px;}
+.tagline{font-size:18px;margin:20px;}
+button{
+padding:12px 25px;
+border:none;
+background:#ffb703;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+/* SLIDER */
+.slider{overflow:hidden;height:400px;}
+.slide{
+width:100%;
+height:400px;
+object-fit:cover;
+animation:slide 12s infinite;
+}
+@keyframes slide{
+0%{transform:translateX(0);}
+33%{transform:translateX(-100%);}
+66%{transform:translateX(-200%);}
+}
+
+/* SECTION */
+.section{
+padding:70px 10%;
+animation:fadeUp 1.2s;
+}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+.section h2{text-align:center;font-size:32px;margin-bottom:20px;}
+
+/* WEATHER */
+.weather{
+background:#023047;
+color:white;
+text-align:center;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+.gallery img{width:100%;border-radius:10px;}
+
+/* TEAM */
+.team-box{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+.member{
+background:white;
+padding:20px;
+width:260px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+.member img{
+width:100%;
+border-radius:50%;
+}
+
+/* BOOKING */
+.booking form{
+max-width:500px;
+margin:auto;
+}
+.booking input, textarea, select, button{
+width:100%;
+padding:12px;
+margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
