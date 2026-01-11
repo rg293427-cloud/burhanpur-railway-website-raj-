@@ -1,41 +1,38 @@
-// WEATHER
+// WEATHER API
 fetch("https://api.open-meteo.com/v1/forecast?latitude=21.30&longitude=76.22&current_weather=true")
 .then(res=>res.json())
 .then(data=>{
-  document.getElementById("weather").innerHTML =
-  🌤️ ${data.current_weather.temperature}°C | 💨 ${data.current_weather.windspeed} km/h;
+document.getElementById("weather").innerHTML =
+`🌤️ Temperature: ${data.current_weather.temperature}°C |
+ Wind: ${data.current_weather.windspeed} km/h`;
 });
 
-// ANNOUNCEMENT
+// VOICE ANNOUNCEMENT (FIXED)
 function playAnnouncement(){
-  speechSynthesis.speak(
-    new SpeechSynthesisUtterance(
-      "Welcome to Burhanpur Railway Station. Have a safe journey."
-    )
-  );
+let msg = new SpeechSynthesisUtterance(
+"Welcome to Burhanpur Railway Station. We wish you a safe and pleasant journey."
+);
+msg.lang="en-IN";
+speechSynthesis.speak(msg);
 }
 
-// PLATFORM ANNOUNCEMENT
-function platformAnnouncement(){
-  speechSynthesis.speak(
-    new SpeechSynthesisUtterance(
-      "Attention please. Kamayani Express will arrive on platform number two."
-    )
-  );
-}
+// LIVE TRAIN STATUS (DEMO)
+setInterval(()=>{
+document.getElementById("liveTrain").innerHTML =
+"🚆 Tapti Ganga Express is arriving in 10 minutes at Platform No. 2";
+},3000);
 
-// SEARCH
-document.getElementById("trainSearch").addEventListener("keyup",function(){
-  let v=this.value.toLowerCase();
-  document.querySelectorAll(".train-table tr").forEach((r,i)=>{
-    if(i===0)return;
-    r.style.display=r.innerText.toLowerCase().includes(v)?"":"none";
-  });
-});
+// PDF TICKET DOWNLOAD
+document.getElementById("ticketForm").addEventListener("submit",function(e){
+e.preventDefault();
+const { jsPDF } = window.jspdf;
+let pdf = new jsPDF();
 
-// CONTACT
-document.getElementById("contactForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  document.getElementById("contactStatus").innerText="✅ Message sent successfully";
-  e.target.reset();
+pdf.text("Burhanpur Railway Station",20,20);
+pdf.text("Passenger: " + name.value,20,35);
+pdf.text("From: " + from.value + " To: " + to.value,20,45);
+pdf.text("Coach: " + coach.value,20,55);
+pdf.text("Status: Confirmed",20,70);
+
+pdf.save("Railway_Ticket.pdf");
 });
